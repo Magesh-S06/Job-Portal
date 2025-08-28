@@ -7,6 +7,7 @@ import * as Sentry from "@sentry/node"
 import { clerkWebhooks } from "./controller/webhooks.controller.js"
 import companyRoutes from './routes/companyRoutes.js'
 import connectCloudinary from "./config/cloudinary.js"
+import jobRoutes from './routes/jobRoutes.js'
 
 dotenv.config()
 
@@ -25,8 +26,8 @@ app.get("/debug-sentry", function mainHandler(req, res) {
 });
 
 app.post('/webhooks',clerkWebhooks)
-
 app.use('/api/company',companyRoutes)
+app.use('/api/jobs',jobRoutes)
 
 const PORT = process.env.PORT || 5000
 
