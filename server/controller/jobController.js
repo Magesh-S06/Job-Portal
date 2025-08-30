@@ -8,7 +8,7 @@ export const getJobs = async (req,res) => {
 
         res.json({success:true,jobs})
     } catch (error) {
-        res.json({sucess:false,message:error.message})
+        res.json({success:false,message:error.message})
     }
 }
 
@@ -21,10 +21,10 @@ export const getJobById = async (req,res) => {
             select:'-password'
         })
         if(!job){
-            res.json({sucess:false,message:'Job not found'})
+            res.json({success:false,message:'Job not found'})
         }
         res.json({sucess:true,job})
     } catch (error) {
-        res.json({sucess:false,message:error.message})
+        res.json({success:false,message:error.message})
     }
 }

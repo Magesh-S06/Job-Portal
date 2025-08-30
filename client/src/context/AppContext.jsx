@@ -1,6 +1,7 @@
 import { createContext, useContext, useEffect, useState } from "react";
 import { jobsData } from "../assets/assets";
 import axios from "axios";
+import { toast } from 'react-toastify'
 
 const AppContext = createContext()
 export const useAppContext = () => useContext(AppContext)
@@ -33,11 +34,12 @@ export const AppProvider = ({children}) =>{
             const {data} = await axios.get(backendUrl+'/api/company/company',{headers:{token:companyToken}})
             if(data.success){
                 setCompanyData(data.company)
+                console.log(data); 
             } else{
                 toast.error(data.message)
             }
         } catch (error) {
-            
+            toast.error(error.message)
         }
     }
 
@@ -48,6 +50,12 @@ export const AppProvider = ({children}) =>{
             setCompanyToken(storedCompanyToken)
         }
     },[])
+
+    useEffect(()=>{
+        if (companyToken) {
+            fetchCompanyData()
+        }
+    },[companyToken])
 
     const value= {
         searchFilter,setSearchFilter,
