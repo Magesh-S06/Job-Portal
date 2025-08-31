@@ -17,13 +17,13 @@ export const getJobById = async (req,res) => {
         const {id} = req.params
         const job = await Job.findById(id)
         .populate({
-            path:'companyID',
+            path:'companyId',
             select:'-password'
         })
         if(!job){
-            res.json({success:false,message:'Job not found'})
+            return res.json({success:false,message:'Job not found'})
         }
-        res.json({sucess:true,job})
+        res.json({success:true,job})
     } catch (error) {
         res.json({success:false,message:error.message})
     }
