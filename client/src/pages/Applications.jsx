@@ -7,6 +7,7 @@ import { useAppContext } from '../context/AppContext'
 import { useAuth, useUser } from '@clerk/clerk-react'
 import axios from 'axios'
 import { toast } from 'react-toastify'
+import { useEffect } from 'react'
 
 const Applications = () => {
   const {user} = useUser()
@@ -14,7 +15,7 @@ const Applications = () => {
   const [isEdit, setIsEdit] = useState(false)
   const [resume, setResume] = useState(null)
 
-  const {backendUrl, userData, userApplications, fetchUserData} = useAppContext()
+  const {backendUrl, userData, userApplications, fetchUserData, fetchUserApplications} = useAppContext()
 
   const updateResume = async () => {
     try {
@@ -38,6 +39,12 @@ const Applications = () => {
     setResume(null)
   }
 
+  useEffect(()=>{
+    if (user) {
+      fetchUserApplications()
+    }
+  },[user])
+
   return (
     <>
     <NavBar />
@@ -54,7 +61,7 @@ const Applications = () => {
             <button onClick={updateResume} className='bg-green-100 border border-green-400 rounded-lg px-4 py-2 cursor-pointer'>Save</button>
           </>:
           <div className='flex gap-2'>
-            <a className='bg-blue-100 text-blue-600 px-4 py-2 rounded-lg' href="">
+            <a target='_blank' href={userData.resume} className='bg-blue-100 text-blue-600 px-4 py-2 rounded-lg'>
               Resume
               </a> 
               <button onClick={updateResume} className='text-gray-500 border border-gray-300 rounded-lg px-4 py-2 cursor-pointer'>
@@ -75,14 +82,14 @@ const Applications = () => {
           </tr>
         </thead>
         <tbody>
-          {jobsApplied.map((job,index)=> true ? (
-            <tr>
+          {userApplications.map((job,index)=> true ? (
+            <tr key={index}>
               <td className='py-3 px-4 flex items-center gap-2 border-b'>
-                <img className='w-8 h-8' src={job.logo} alt="" />
-                {job.company}
+                <img className='w-8 h-8' src={job.companyId.image} alt="" />
+                {job.companyId.name}
               </td>
-              <td className='py-2 px-4 border-b'>{job.title}</td>
-              <td className='py-2 px-4 border-b max-sm:hidden'>{job.location}</td>
+              <td className='py-2 px-4 border-b'>{job.jobId.title}</td>
+              <td className='py-2 px-4 border-b max-sm:hidden'>{job.jobId.location}</td>
               <td className='py-2 px-4 border-b max-sm:hidden'>{moment(job.date).format('ll')}</td>
               <td className='py-2 px-4 border-b'>
                 <span className={`${job.status === 'Accepted' ? 'bg-green-100' : job.status === 'Rejected' ? 'bg-red-100' : 'bg-blue-100'} px-4 py-1.5 rounded`}>
