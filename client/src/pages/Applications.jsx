@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import NavBar from '../components/NavBar'
+import NavBar from '../components/Navbar'
 import { assets, jobsApplied } from '../assets/assets'
 import moment from 'moment'
 import Footer from '../components/Footer'
