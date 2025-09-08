@@ -7,7 +7,7 @@ A Job Portal application which helps to browse jobs for different companies base
 - **Browsing Jobs**: Home page containing all the available jobs. 
 - **Applied Jobs**: Checking the status of all applied jobs and updating resume. 
 - **User Authentication**: Secure and personalized experience for each user.
-- **Responsive UI**: Seamless usage on desktop devices.
+- **Responsive UI**: Seamless usage on desktop and mobile devices.
 - **Recruiter Page**: A login based on company's side to add more jobs, check for applicants for each job.
 
 ## Tech Stack
@@ -33,7 +33,7 @@ A Job Portal application which helps to browse jobs for different companies base
 
 1. Clone the repository:
    ```
-   git clone 
+   git clone https://github.com/Magesh-S06/Job-Portal.git
    ```
 
 2. Navigate to the project directory:
