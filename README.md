@@ -78,3 +78,5 @@ A Job Portal application which helps to browse jobs for different companies base
    ```
 
 7. Open [http://localhost:5173](http://localhost:5173) in your browser to see the application.
+
+8. [📄 System Design Document](Job_Portal_System_Writeup.pdf)
