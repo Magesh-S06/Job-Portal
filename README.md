@@ -105,5 +105,5 @@ A Job Portal application which helps to browse jobs for different companies base
 
 10. API Documentation:
 
-   [Postman Link](https://swag-magi-s-team.postman.co/workspace/Team-Workspace~a80ca927-034a-4801-8009-a0830aeea785/collection/47959216-67536da1-03f3-42dd-bdbd-bd13225bf5b4?action=share&creator=47959216)
+   - [Postman Link](https://swag-magi-s-team.postman.co/workspace/Team-Workspace~a80ca927-034a-4801-8009-a0830aeea785/collection/47959216-67536da1-03f3-42dd-bdbd-bd13225bf5b4?action=share&creator=47959216)
    - Change the part [http://localhost:5000](http://localhost:5000) with the [Backend_URL](https://job-portal-yb0q.onrender.com)
