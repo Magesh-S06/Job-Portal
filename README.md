@@ -80,3 +80,15 @@ A Job Portal application which helps to browse jobs for different companies base
 7. Open [http://localhost:5173](http://localhost:5173) in your browser to see the application.
 
 8. [📄 System Design Document](Job_Portal_System_Writeup.pdf)
+
+9. Sample Images:
+   ![Screenshot](Sample/Screenshot%202025-12-11%20125317.png)
+   ![Screenshot](Sample/Screenshot%202025-12-11%20125256.png)
+   ![Screenshot](Sample/Screenshot%202025-12-11%20125333.png)
+   ![Screenshot](Sample/Screenshot%202025-12-11%20125342.png)
+   ![Screenshot](Sample/Screenshot%202025-12-11%20125348.png)
+   ![Screenshot](Sample/Screenshot%202025-12-11%20125409.png)
+   ![Screenshot](Sample/Screenshot%202025-12-11%20125449.png)
+   ![Screenshot](Sample/Screenshot%202025-12-11%20125506.png)
+   ![Screenshot](Sample/Screenshot%202025-12-11%20125501.png)
+   ![Screenshot](Sample/Screenshot%202025-12-11%20125457.png)
