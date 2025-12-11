@@ -15,7 +15,6 @@ A Job Portal application which helps to browse jobs for different companies base
 - **Frontend**: React.js
 - **Database**: Mongo Atlas
 - **Authentication**: JWT Tokens
-- **Paymeny Integration**: Razorpay
 - **User Login**: Clerk
 
 ## Getting Started
