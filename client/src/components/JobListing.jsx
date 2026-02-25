@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from 'react'
 import { useAppContext } from '../context/AppContext'
-import { assets, JobCategories, JobLocations} from '../assets/assets'
+import { assets, JobCategories, JobLocations, recommendedJobData} from '../assets/assets'
 import JobCard from './JobCard'
 
 const JobListing = () => {
-  const {isSearched, searchFilter, setSearchFilter, jobs} = useAppContext()
+  const {isSearched, searchFilter, setSearchFilter, jobs, user, userData} = useAppContext()
 
   const [showFilter, setShowFilter] = useState(false)
   const [currentPage, setCurrentPage] = useState(1)
@@ -103,9 +103,20 @@ const JobListing = () => {
         </div>
       </div>
 
+      {/* Recommended Job Listings */}
+            <section className='w-full lg:w-3/4 text-grau-800 max-lg:px-4'>
+            {user && userData?.resume && <>
+            <h3 className='font-medium text-3xl py-2' id='#job-list'>Recommeded Jobs</h3>
+        <p className='mb-8'>Recommended jobs for you.</p>
+        <div className='grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-4'>
+            {recommendedJobData.map((job, index) => (
+          <JobCard key={index} job={job} />
+            ))}
+        </div>
+            </>}
 
       {/* Job Listings */}
-      <section className='w-full lg:w-3/4 text-grau-800 max-lg:px-4'>
+      
         <h3 className='font-medium text-3xl py-2' id='#job-list'>Latest Jobs</h3>
         <p className='mb-8'>Get your desired job from top companies.</p>
         <div className='grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-4'>

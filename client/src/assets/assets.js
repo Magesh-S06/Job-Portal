@@ -1,6 +1,7 @@
 import logo from "./logo.svg";
 import search_icon from "./search_icon.svg";
 import company_icon from "./company_icon.svg";
+import company_icon_2 from "./google.png"
 import microsoft_logo from "./microsoft_logo.svg";
 import walmart_logo from "./walmart_logo.svg";
 import accenture_logo from "./accenture_logo.png";
@@ -159,6 +160,75 @@ export const viewApplicationsPageData = [
     { _id: 6, name: "Alison Powell", jobTitle: "Data Scientist", location: "New Delhi", imgSrc: profile_img },
     { _id: 7, name: "Richard Sanford", jobTitle: "Marketing Manager", location: "Chennai", imgSrc: profile_img },
 ];
+
+export const recommendedJobData = [
+    {
+        _id: '1',
+        title: "Full Stack Developer",
+        location: "California",
+        level: "Senior Level",
+        companyId: {
+            "_id": "670e4d25ca9fda8f1bf359b9",
+            "name": "Slack",
+            "email": "slack@demo.com",
+            "image": company_icon_2,
+        },
+        description: `
+        <p>We are seeking a highly skilled Full Stack Developer to join our dynamic and innovative team. The ideal candidate will have a passion for developing scalable web applications and working across the entire technology stack, including front-end and back-end development. You will have the opportunity to work with the latest technologies and contribute to exciting projects that impact our users directly.</p>
+        <h2><strong>Key Responsibilities</strong></h2>
+        <ol>
+            <li>Build, test, and deploy highly responsive web applications.</li>
+            <li>Design user-friendly interfaces using HTML, CSS, and JavaScript.</li>
+            <li>Develop and maintain APIs and databases to support application functionality.</li>
+            <li>Collaborate with cross-functional teams to define, design, and ship new features.</li>
+            <li>Identify and resolve bottlenecks and bugs to optimize application performance.</li>
+        </ol>
+        <h2><strong>Skills Required</strong></h2>
+        <ol>
+            <li>Proficiency in HTML, CSS, and JavaScript frameworks (e.g., React, Angular).</li>
+            <li>Experience with server-side languages (e.g., Node.js, Python).</li>
+            <li>Familiarity with relational and non-relational databases (e.g., MySQL, MongoDB).</li>
+            <li>Strong understanding of web security and performance optimization.</li>
+            <li>Ability to work in an Agile environment.</li>
+        </ol>`,
+        salary: 82000,
+        date: 1729681667114,
+        category: "Programming",
+    },
+    {
+        _id: '5',
+        title: "Software Engineer",
+        location: "Hyderabad",
+        level: "Intermediate Level",
+        companyId: {
+            "_id": "670e4d25ca9fda8f1bf359b9",
+            "name": "Slack",
+            "email": "slack@demo.com",
+            "image": company_icon,
+        },
+        description: `
+        <p>Join our team as a Software Engineer to build high-quality applications that deliver exceptional user experiences. You will be responsible for designing, developing, and maintaining software solutions that meet business needs. Collaborating closely with other engineers, you will contribute to code reviews and ensure best practices are followed throughout the development process.</p>
+        <h2><strong>Key Responsibilities</strong></h2>
+        <ol>
+            <li>Develop and maintain software applications that fulfill user requirements.</li>
+            <li>Collaborate with cross-functional teams to design scalable and efficient solutions.</li>
+            <li>Participate in code reviews to ensure code quality and maintainability.</li>
+            <li>Conduct testing and debugging to improve application functionality.</li>
+            <li>Document development processes and application designs.</li>
+        </ol>
+        <h2><strong>Skills Required</strong></h2>
+        <ol>
+            <li>Proficient in Java or C# with a solid understanding of object-oriented programming.</li>
+            <li>Experience with Agile methodologies and software development life cycle.</li>
+            <li>Strong problem-solving skills and attention to detail.</li>
+            <li>Familiarity with version control systems (e.g., Git).</li>
+            <li>Excellent communication and teamwork abilities.</li>
+        </ol>`,
+        salary: 91000,
+        date: 1729681667114,
+        category: "Programming",
+    }
+]
 
 export const jobsData = [
     {

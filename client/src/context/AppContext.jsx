@@ -122,7 +122,7 @@ export const AppProvider = ({children}) =>{
         backendUrl,
         userData,setUserData,
         userApplications, setUserApplications,
-        fetchUserData, fetchUserApplications
+        fetchUserData, fetchUserApplications,user
     }
 
     return(
