@@ -24,10 +24,7 @@ const AddJob = () => {
       const description = quillRef.current.root.innerHTML
       const {data} = await axios.post(backendUrl+'/api/company/post-job',
         {title, description,location,salary,category,level},
-        {
-          headers:{
-          Authorization: `Bearer ${companyToken}`}
-        }
+        {headers:{token:companyToken}}
       )
       if (data.success) {
         toast.success(data.message)
