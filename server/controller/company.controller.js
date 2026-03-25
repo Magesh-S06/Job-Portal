@@ -4,6 +4,8 @@ import {v2 as cloudinary} from 'cloudinary'
 import generateToken from "../utils/generateToken.js"
 import Job from "../models/Job.js"
 import JobApplication from "../models/JobApplication.js"
+import User from "../models/User.js";
+import { sendJobNotification } from "../utils/sendJobMail.js";
 
 export const registerCompany = async(req,res) => {
     const {name,email,password} = req.body
@@ -87,6 +89,10 @@ export const postJob = async(req,res) => {
             category
         })
         await newJob.save()
+        const users = await User.find({}, "email");
+        const emails = users.map(user => user.email);
+        console.log("📧 Total users to notify:", emails.length);
+        sendJobNotification(newJob, emails);
 
         res.json({success:true,newJob,message:"Job added Successfully"})
     } catch (error) {
