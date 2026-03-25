@@ -1,12 +1,17 @@
 import { Resend } from "resend";
 
-const resend = new Resend(process.env.RESEND_API_KEY);
-if (!process.env.RESEND_API_KEY) {
-  throw new Error("❌ RESEND_API_KEY is missing in .env");
-}
+
+
 
 export const sendJobNotification = async (job, emails) => {
   try {
+    if (!process.env.RESEND_API_KEY) {
+    throw new Error("❌ RESEND_API_KEY is missing in .env");
+        }
+
+    const resend = new Resend(process.env.RESEND_API_KEY);
+    console.log("🚀 sendJobNotification CALLED");
+    console.log("KEY:", process.env.RESEND_API_KEY);
 
     // Format date
     const formattedDate = new Date(job.date).toLocaleDateString("en-IN", {
